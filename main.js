@@ -2,11 +2,12 @@ var arrayOfPosts='';
 
 
 window.onload = function() {
+  
 }
 
 // this function is going to make a fetch request to the url inside it's parameter brackets (). Then it will turn the response (data it's getting back), saved here as res. The res.json will not be saved as posts and saved into the variable, arrayOfPosts
 function getPosts (){
-  
+
     let data = '';
   fetch('https://randomuser.me/api/')
     .then(res => res.json())
