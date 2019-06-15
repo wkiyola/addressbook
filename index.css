@@ -8,13 +8,17 @@ button{
     padding: 5px;
     margin-left: 40px;
 }
-#displayBox{
-    border: 1px solid black;
-    height: 100px;
+.displaybox{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    text-transform: capitalize;
+    border: 1px solid gray;
+    height: 140px;
     margin: 10px;
 }
 img{
     margin: 20px;
-    height: 60px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
 }

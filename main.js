@@ -9,19 +9,27 @@ function getPosts (){
     let data = '';
   fetch('https://randomuser.me/api/')
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => displayPost(data.results))
 }
 
-// this function logs the results in your browsers console
-const consolePosts = () => {
-  console.log(arrayOfPosts)
-}
-const displayPost = () => {
+// // this function logs the results in your browsers console
+// const consolePosts = () => {
+//   console.log(arrayOfPosts)
+// } 
+const displayPost = (x) => {
+  console.log(x);
     const allPosts = document.getElementById('all-posts')
-    arrayOfPosts.map((post, index) => {
-      const li = document.createElement('li')
-      const text = document.createTextNode(`#${index}, Title: ${post.title}:  ${post.body}, by user: ${post.userId}`)
-      li.appendChild(text)
-      allPosts.append(li)
+    x.map((post, index) => {
+      
+      const div = document.createElement('div')
+      div.classList.add('displaybox')
+      const text = document.createTextNode(`${post.name.title}:  ${post.name.first} ${post.name.last}`)
+      const image = document.createElement('img')
+      image.src=`${post.picture.thumbnail}`
+      div.append(image)
+      div.appendChild(text)
+      allPosts.append(div)
+
+      
     })
   }
